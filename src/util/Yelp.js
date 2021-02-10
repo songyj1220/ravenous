@@ -1,5 +1,5 @@
 const apiKey =
-  "Am-rqgNUoWNLlcFqGGRiDUYnOjG73MQHj6S2pOloTY0OaOaDWU251R2cRp_kcvk7q_8V-9O3vjRULRGysOusWpLTyPDxVl2ZknyEgXcYm1-G2HNyscZGBC4glHNNX3Yx";
+  "secret";
 
 const Yelp = {
   searchYelp(term, location, sortBy) {
@@ -10,6 +10,7 @@ const Yelp = {
       }
     )
       .then((response) => {
+        console.log(response);
         return response.json();
       })
       .then((jsonResponse) => {
