@@ -10,17 +10,27 @@ class App extends React.Component {
     super(props);
     this.state = { businesses: [] };
     this.searchYelp = this.searchYelp.bind(this);
+    this.corsAccess = this.corsAccess.bind(this);
   }
   searchYelp(term, location, sortBy) {
     Yelp.searchYelp(term, location, sortBy).then((businesses) => {
       this.setState({ businesses: businesses });
     });
   }
+
+  corsAccess()
+  {
+    window.open("https://cors-anywhere.herokuapp.com/corsdemo");
+  }
+
   render() {
     return (
       <div className="App">
         <h1>ravenous</h1>
         <SearchBar searchYelp={this.searchYelp} />
+        <div className="demoAccess">
+        <button onClick={this.corsAccess}>Request Access for Demo</button>
+        </div>
         <BusinessList businesses={this.state.businesses} />
       </div>
     );
