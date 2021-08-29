@@ -18,8 +18,7 @@ class App extends React.Component {
     });
   }
 
-  corsAccess()
-  {
+  corsAccess() {
     window.open("https://cors-anywhere.herokuapp.com/corsdemo");
   }
 
@@ -29,7 +28,7 @@ class App extends React.Component {
         <h1>ravenous</h1>
         <SearchBar searchYelp={this.searchYelp} />
         <div className="demoAccess">
-        <button onClick={this.corsAccess}>Request Access for Demo</button>
+          <button onClick={this.corsAccess}>Click here to request an access for Demo</button>
         </div>
         <BusinessList businesses={this.state.businesses} />
       </div>

@@ -51,4 +51,13 @@ h1 {
 button {
   background-color: cadetblue;
   font-size: 1.5rem;
+  border:none;
+  color:white;
+  border-radius: 4px;
+  padding:0.72rem 1.7rem;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: rgb(57, 123, 126);
 }
