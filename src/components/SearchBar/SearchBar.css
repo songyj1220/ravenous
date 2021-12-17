@@ -63,7 +63,7 @@
 
 .SearchBar-submit a {
   border-radius: 4px;
-  padding: 0.72rem 1.7rem;
+  padding: 0.7rem 1rem;
   background-color: #cca353;
   color: #ffffff;
   font-weight: 600;
@@ -73,6 +73,16 @@
 .SearchBar-submit a:hover {
   cursor: pointer;
   background-color: #a7874b;
+}
+
+.errorMessage {
+  margin-top: 20px;
+  padding: 0.3rem 0.3rem !important;
+  text-align: center;
+  background-color: rgba(212, 182, 84, 0.514) !important;
+  color: rgb(131, 23, 23) !important;
+  border-color: rgb(231, 217, 134) !important;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 560px) {

@@ -1,10 +1,11 @@
 import React from "react";
+import {Alert} from 'react-bootstrap';
 import "./SearchBar.css";
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { term: "", location: "", sortBy: "best_match" };
+    this.state = { term: "", location: "", sortBy: "best_match", showError:false };
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
@@ -32,6 +33,7 @@ class SearchBar extends React.Component {
           this.state.sortBy
         );
       }
+
     });
   }
 
@@ -44,6 +46,7 @@ class SearchBar extends React.Component {
   }
 
   handleSearch(event) {
+    this.setState({showError:false});
     if(this.state.location)
     {
       this.props.searchYelp(
@@ -51,6 +54,11 @@ class SearchBar extends React.Component {
         this.state.location,
         this.state.sortBy
       );
+    }
+    else
+    {
+      console.log("not valid location");
+      this.setState({showError:true});
     }
     event.preventDefault();
   }
@@ -62,15 +70,26 @@ class SearchBar extends React.Component {
           <ul>{this.renderSortByOptions()}</ul>
         </div>
         <div className="SearchBar-fields">
+
           <input
             onChange={this.handleTermChange}
             placeholder="Search Businesses"
           />
           <input onChange={this.handleLocationChange} placeholder="Where?" />
-        </div>
+       
+          {/* <div className="SearchBar-submit">
+          <a onClick={this.handleSearch}>Let's Go</a>
+        </div> */}
+       </div>
+
         <div className="SearchBar-submit">
           <a onClick={this.handleSearch}>Let's Go</a>
         </div>
+
+         <Alert className="errorMessage" variant='danger'hidden={!this.state.showError}>
+         *Please enter zipcode. 
+        </Alert>
+
       </div>
     );
   }

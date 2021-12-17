@@ -48,7 +48,7 @@ h1 {
   text-align: center;
 }
 
-button {
+/* button {
   background-color: cadetblue;
   font-size: 1.5rem;
   border:none;
@@ -60,4 +60,18 @@ button {
 button:hover{
   cursor: pointer;
   background-color: rgb(57, 123, 126);
+} */
+
+.insturctionModal img {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.requestLink {
+  color: blue;
+  text-decoration: underline;
+}
+
+.requestLink:hover {
+  cursor: pointer;
 }
